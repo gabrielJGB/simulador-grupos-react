@@ -4,8 +4,7 @@ import './style.css';
 import Grupo from './components/Grupo';
 
 export default function App() {
-  const grupos_array = 
-  [
+  const grupos_array = [
     {
       grupo: 'A',
       equipos: [
@@ -23,6 +22,30 @@ export default function App() {
         },
         {
           posicion: 2,
+          equipo: 'Club Racing',
+          puntos: 22,
+          PJ: 21,
+          PG: 2,
+          PE: 2,
+          PP: 5,
+          GF: 4,
+          GC: 3,
+          dif: -2,
+        },
+        {
+          posicion: 3,
+          equipo: 'Club Racing',
+          puntos: 22,
+          PJ: 21,
+          PG: 2,
+          PE: 2,
+          PP: 5,
+          GF: 4,
+          GC: 3,
+          dif: -2,
+        },
+        {
+          posicion: 4,
           equipo: 'Club Racing',
           puntos: 22,
           PJ: 21,
