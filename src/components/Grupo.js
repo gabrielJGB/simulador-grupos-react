@@ -14,7 +14,6 @@ const Grupo = (props) => {
         <Fecha />
         <Fecha />
       </div>
-
     </div>
   );
 };

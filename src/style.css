@@ -5,17 +5,120 @@ p {
 }
 
 body {
-  background-color: rgb(19, 19, 19);
+  background-color: #191919;
   color: rgb(245, 245, 245);
 }
 
-table, th, td {
-  border: 1px solid rgb(97, 95, 95);
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #373b3e;
   border-collapse: collapse;
 }
 
-td,th{
+td,
+th {
   text-align: center;
-  padding:3px 5px;
+  padding: 5px;
   font-size: 12px;
+  background-color: #212529;
+}
+
+th {
+  background-color: black
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px auto;
+  gap: 30px;
+  width: 70%;
+}
+
+.fechas-container {
+  margin-top:10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.fecha {
+  background-color:#212529;
+  font-size: 12px;
+}
+
+.fecha > div:nth-child(3){
+ border-top: solid 1px rgb(0, 0, 0);
+}
+
+.fecha-numero {
+  text-align: center;
+  background-color: black;
+  padding: 2px 0;
+  font-size: 13px;
+}
+
+.fecha-dia {
+  text-align: center;
+  padding: 0px 0;
+  color: rgb(211, 211, 211);
+  
+  padding-top:7px
+}
+
+.fecha-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: rgb(241, 241, 241);
+}
+
+
+.fecha-info > div {
+ padding:7px
+}
+
+.fecha-equipo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fecha-goles input {
+  width: 25px;
+  height: 25px;
+  outline: none;
+  text-align: center;
+  background-color: #121212;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fecha-goles input:focus {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.862);
+}
+
+.grupo {
+  
+}
+
+@media screen and (max-width: 800px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  .main-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 }
