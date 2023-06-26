@@ -1,220 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
-
 import Grupo from './components/Grupo';
+import grupos_array_json from './grupos_array.json';
 
 export default function App() {
-  const grupos_array = [
-    {
-      grupo: 'A',
-      equipos: [
-        {
-          posicion: 1,
-          equipo: 'Racing Club',
-          puntos: 21,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-        {
-          posicion: 2,
-          equipo: 'Club Racing',
-          puntos: 22,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-        {
-          posicion: 3,
-          equipo: 'Club Racing',
-          puntos: 22,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-        {
-          posicion: 4,
-          equipo: 'Club Racing',
-          puntos: 22,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-      ],
-      fechas: [
-        {
-          numero: 1,
-          partidos: [
-            {
-              dia: 'Mie 5/4, 19:00',
-              local: 'AUC',
-              visitante: 'FLA',
-              escudo_local: 'img',
-              escudo_visitante: 'img',
-              goles_local: 2,
-              goles_visitante: 1,
-            },
-          ],
-        },
-        {
-          numero: 2,
-          partidos: [
-            {
-              dia: 'Jue 5/4, 19:00',
-              local: 'AUF',
-              visitante: 'LAF',
-              escudo_local: 'img',
-              escudo_visitante: 'img',
-              goles_local: 2,
-              goles_visitante: 1,
-            },
-          ],
-        },
-      ],
-    },
+  const [gruposArray, setGruposArray] = useState(false);
 
-    {
-      grupo: 'B',
-      equipos: [
-        {
-          posicion: 1,
-          equipo: 'Boca Juniors',
-          puntos: 21,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-        {
-          posicion: 2,
-          equipo: 'Juniors Boca',
-          puntos: 22,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-      ],
-      fechas: [
-        {
-          numero: 1,
-          partidos: [
-            {
-              dia: 'Mie 5/4, 19:00',
-              local: 'AUC',
-              visitante: 'FLA',
-              escudo_local: 'img',
-              escudo_visitante: 'img',
-              goles_local: 2,
-              goles_visitante: 1,
-            },
-          ],
-        },
-        {
-          numero: 2,
-          partidos: [
-            {
-              dia: 'Jue 5/4, 19:00',
-              local: 'AUF',
-              visitante: 'LAF',
-              escudo_local: 'img',
-              escudo_visitante: 'img',
-              goles_local: 2,
-              goles_visitante: 1,
-            },
-          ],
-        },
-      ],
-    },
+  useEffect(() => {
+    setGruposArray(grupos_array_json);
+    console.log(grupos_array_json);
+  }, []);
 
-    {
-      grupo: 'C',
-      equipos: [
-        {
-          posicion: 1,
-          equipo: 'Racing Club',
-          puntos: 21,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-        {
-          posicion: 2,
-          equipo: 'Club Racing',
-          puntos: 22,
-          PJ: 21,
-          PG: 2,
-          PE: 2,
-          PP: 5,
-          GF: 4,
-          GC: 3,
-          dif: -2,
-        },
-      ],
-      fechas: [
-        {
-          numero: 1,
-          partidos: [
-            {
-              dia: 'Mie 5/4, 19:00',
-              local: 'AUC',
-              visitante: 'FLA',
-              escudo_local: 'img',
-              escudo_visitante: 'img',
-              goles_local: 2,
-              goles_visitante: 1,
-            },
-          ],
-        },
-        {
-          numero: 2,
-          partidos: [
-            {
-              dia: 'Jue 5/4, 19:00',
-              local: 'AUF',
-              visitante: 'LAF',
-              escudo_local: 'img',
-              escudo_visitante: 'img',
-              goles_local: 2,
-              goles_visitante: 1,
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
-  return (
-    <div className="main-container">
-      {grupos_array.map((grupo) => (
-        <Grupo datos_grupo={grupo} />
-      ))}
-    </div>
-  );
+  if (!gruposArray) {
+    return <div>Error</div>
+  }
+   return (
+      <div className="main-container">
+        {gruposArray.map((grupo) => (
+          <Grupo datos_grupo={grupo} />
+        ))}
+      </div>
+    );
 }
